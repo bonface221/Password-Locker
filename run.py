@@ -131,6 +131,7 @@ def main():
 
                         elif short_code2 == 'dc':
                             if display_credentials():
+                                print('\n')
                                 print(
                                     'Here is a list of all your stored Credentials')
                                 print('\n')
@@ -149,32 +150,40 @@ def main():
 
                         elif short_code2 == 'fc':
                             print('Enter the social handle to find credential')
+                            print('\n')
 
                             search_handle = input()
                             if check_existing_credentials(search_handle):
                                 found_handle = find_credential(search_handle)
+                                print('\n')
                                 print(
                                     f'{found_handle.social_platform} has been found')
-                                print('-'*10)
+                                print('--'*10)
 
                                 print(
                                     f'User name .......{found_handle.user_name}')
                                 print(
                                     f'password .........{found_handle.password}')
+                                print('\n')
 
                             else:
                                 print(
                                     'That Social handle does not exist. Please check the spelling')
+                                print('\n')
 
                         elif short_code2 == 'dd':
                             print(
                                 'Are you sure you want to delete a credential! It will be lost forever!!')
+                            print('\n')
                             print('Enter ok to proceed : x to cancel')
                             entered = input()
+                            print('\n')
                             if entered == 'ok':
                                 print('Enter credential to delete')
                                 to_delete = input()
                                 del_credential(to_delete)
+                                print(f'{to_delete} deleted successfully')
+                                print('\n')
 
                             else:
                                 return
@@ -193,6 +202,7 @@ def main():
                 print('Username does not exist')
 
         elif short_code1 == 'ex':
+            print('See you later')
             print('Bye....')
             break
         else:
